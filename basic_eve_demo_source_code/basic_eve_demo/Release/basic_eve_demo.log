@@ -1,0 +1,9 @@
+﻿  basic_eve_demo.c
+  Eve2_81x.c
+  Generating code
+  5 of 39 functions (12.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  basic_eve_demo.vcxproj -> C:\SVN\Documents\trunk\Appnotes\Eve\Ray's Basic EVE Demo\Basic_EVE_Package_Final\Release\basic_eve_demo.exe
+  basic_eve_demo.vcxproj -> C:\SVN\Documents\trunk\Appnotes\Eve\Ray's Basic EVE Demo\Basic_EVE_Package_Final\Release\basic_eve_demo.pdb (Full PDB)
