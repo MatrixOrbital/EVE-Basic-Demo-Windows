@@ -34,7 +34,7 @@ Select and download the .exe generated for your specific EVE2 or EVE3 variant to
 * **39** - 3.9" 480 x 128 TFT
 * **43** - 4.3" 480 x 272 TFT
 * **50** - 5.0" 800 x 480 TFT
-* **52** - 5.2: 800 x 128 TFT
+* **52** - 5.2" 800 x 128 TFT
 * **70** - 7.0" 800 x 480 TFT
 
 
@@ -48,7 +48,7 @@ Select and download the .exe generated for your specific EVE2 or EVE3 variant to
 
 If you have a touch screen, TPR or TPC, you will need to calibrate the touch screen by pressing the dots. After the calibration is complete, you will see Matrix Orbital with a blue circle. If you press the circle it will enlarge.
 
-**SOURCE CODE***
+**SOURCE CODE**
 
 The source code will be configured to work with a EVE2-43A-TPN display by default. Users can configure the code for their specific display 
 variant by opening the MatrixEve2Conf.h file, and modifying the listed definitions appropriately.
