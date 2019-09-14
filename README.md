@@ -1,7 +1,12 @@
 # BASIC EVE2 AND EVE3 TEST DEMO SOFTWARE
+
 A quick and easy sanity check to ensure that your Matrix Orbital EVE2 or EVE3 SPI TFT Display and touch hardware works properly.
 
+------------------------------------------------------------------
+
 **Hardware Requirements:**
+
+![alt text](https://www.matrixorbital.com/image/cache/catalog/products/EVE/EVE3-43G-300x300.jpg)
 
 **EVE3 SPI TFT** - Uses BT815/BT816 Graphics controller
 
@@ -19,10 +24,13 @@ An EVE2-USB2SPI Bridge
 
 https://www.matrixorbital.com/ftdi-eve/EVE2-USB2SPI-KIT-A
 
+![alt text](https://www.matrixorbital.com/image/cache/catalog/products/EVE2%20USB%20to%20SPI%20Module-250x250.jpg)
+
 
 **SOFTWARE**
 
 Select and download the .exe generated for your specific EVE2 or EVE3 variant to test both the TFT and touch functionality of your display. 
+
 
 1. Select **EVE2** or **EVE3**
 
@@ -47,6 +55,11 @@ Select and download the .exe generated for your specific EVE2 or EVE3 variant to
 **RUN THE EXE**
 
 If you have a touch screen, TPR or TPC, you will need to calibrate the touch screen by pressing the dots. After the calibration is complete, you will see Matrix Orbital with a blue circle. If you press the circle it will enlarge.
+
+![alt text](https://raw.githubusercontent.com/MatrixOrbital/Basic-EVE-Demo/master/Screens/Basic-EVE-Demo-1.jpg)
+![alt text](https://raw.githubusercontent.com/MatrixOrbital/Basic-EVE-Demo/master/Screens/Basic-EVE-Demo-2.jpg)
+![alt text](https://raw.githubusercontent.com/MatrixOrbital/Basic-EVE-Demo/master/Screens/Basic-EVE-Demo-3.jpg)
+![alt text](https://raw.githubusercontent.com/MatrixOrbital/Basic-EVE-Demo/master/Screens/Basic-EVE-Demo-4.jpg)
 
 **SOURCE CODE**
 
