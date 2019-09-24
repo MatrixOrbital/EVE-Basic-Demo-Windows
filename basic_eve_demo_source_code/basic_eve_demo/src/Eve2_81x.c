@@ -84,9 +84,9 @@ void FT81x_Init(void)
     // Eve is unhappy - needs a paddling.
     uint32_t Patch_Add = rd32(REG_COPRO_PATCH_PTR + RAM_REG);
     wr8(REG_CPU_RESET + RAM_REG, 1);
-    wr8(REG_CMD_READ + RAM_REG, 0);
-    wr8(REG_CMD_WRITE + RAM_REG, 0);
-    wr8(REG_CMD_DL + RAM_REG, 0);
+    wr16(REG_CMD_READ + RAM_REG, 0);
+    wr16(REG_CMD_WRITE + RAM_REG, 0);
+    wr16(REG_CMD_DL + RAM_REG, 0);
     wr8(REG_CPU_RESET + RAM_REG, 0);
     wr32(REG_COPRO_PATCH_PTR + RAM_REG, Patch_Add);
   }
@@ -153,7 +153,7 @@ void Cap_Touch_Upload(void)
 {
 #include "touch_cap_811.h"	
 	//---Goodix911 Configuration from AN336
-	//Load the TOUCH_DATA_U8 or TOUCH_DATA_U32 array from file ìtouch_cap_811.hî via the FT81x command buffer RAM_CMD
+	//Load the TOUCH_DATA_U8 or TOUCH_DATA_U32 array from file ‚Äútouch_cap_811.h‚Äù via the FT81x command buffer RAM_CMD
 	uint8_t CTOUCH_CONFIG_DATA_G911[] = { TOUCH_DATA_U8 };
 	CoProWrCmdBuf(CTOUCH_CONFIG_DATA_G911, TOUCH_DATA_LEN);
 	//Execute the commands till completion
