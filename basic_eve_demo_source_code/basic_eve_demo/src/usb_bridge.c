@@ -68,9 +68,9 @@ void HAL_SPI_ReadBuffer(uint8_t *Buffer, uint32_t Length)
 	FT_STATUS res = SPI_Read(handle, Buffer, Length, &SizeTransfered, SPI_TRANSFER_OPTIONS_SIZE_IN_BYTES);
 }
 
-void HAL_Delay(uint32_t DLY) 
+void HAL_Delay(uint32_t milliSeconds) 
 {
-	Sleep(DLY);
+	Sleep(milliSeconds);
 }
 
 void HAL_Eve_Reset_HW(void)
@@ -110,10 +110,12 @@ void HAL_Eve_Reset_HW(void)
 		printf("USB->SPI Bridge not found.");
 		exit(1);
 	}
-	FT_WriteGPIO(handle, (1 << FT800_PD_N) | 0x3B, (0 << FT800_PD_N) | 0x08);//PDN set to 0 ,connect BLUE wire of MPSSE to PDN# of FT800 board
+
+	// reset the EVE by toggling PD pin (GPIO 7 of the FT232H) 0 to 1
+	FT_WriteGPIO(handle, (1 << FT800_PD_N) | 0x3B, (0 << FT800_PD_N) | 0x08); // PDN set to 0
 	Sleep(20);
-	
-	FT_WriteGPIO(handle, (1 << FT800_PD_N) | 0x3B, (1 << FT800_PD_N) | 0x08);//PDN set to 0 ,connect BLUE wire of MPSSE to PDN# of FT800 board
+
+	FT_WriteGPIO(handle, (1 << FT800_PD_N) | 0x3B, (1 << FT800_PD_N) | 0x08); // PDN set to 1 
 	Sleep(20);
 
 
