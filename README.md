@@ -36,7 +36,7 @@ Select and download the .exe generated for your specific EVE2 or EVE3 variant to
 
 2. Select your display size:
 
-* **29** - 2.9" 320 x 102 TFT
+* [**29** - 2.9" 320 x 102 TFT](https://www.matrixorbital.com/eve2-29a)
 * **35** - 3.5" 320 x 240 TFT
 * **38** - 3.8" 480 x 116 TFT
 * **39** - 3.9" 480 x 128 TFT
