@@ -32,18 +32,18 @@ https://www.matrixorbital.com/ftdi-eve/EVE2-USB2SPI-KIT-A
 Select and download the .exe generated for your specific EVE2 or EVE3 variant to test both the TFT and touch functionality of your display. 
 
 
-1. Select **EVE2** or **EVE3**
+1. Select [**EVE2**](https://www.matrixorbital.com/ftdi-eve/eve-ft812) or [**EVE3**](https://www.matrixorbital.com/ftdi-eve/eve-bt815-bt816)
 
 2. Select your display size:
 
 * [**29** - 2.9" 320 x 102 TFT](https://www.matrixorbital.com/eve2-29a)
-* **35** - 3.5" 320 x 240 TFT
-* **38** - 3.8" 480 x 116 TFT
+* [**35** - 3.5" 320 x 240 TFT](https://www.matrixorbital.com/index.php?route=product/search&search=eve3-35)
+* [**38** - 3.8" 480 x 116 TFT](https://www.matrixorbital.com/index.php?route=product/search&search=eve2-38)
 * **39** - 3.9" 480 x 128 TFT
-* **43** - 4.3" 480 x 272 TFT
-* **50** - 5.0" 800 x 480 TFT
-* **52** - 5.2" 800 x 128 TFT
-* **70** - 7.0" 800 x 480 TFT
+* [**43** - 4.3" 480 x 272 TFT](https://www.matrixorbital.com/index.php?route=product/search&search=eve3-43)
+* [**50** - 5.0" 800 x 480 TFT](https://www.matrixorbital.com/index.php?route=product/search&search=eve3-50)
+* [**52** - 5.2" 800 x 128 TFT](https://www.matrixorbital.com/index.php?route=product/search&search=eve3-52)
+* [**70** - 7.0" 800 x 480 TFT](https://www.matrixorbital.com/index.php?route=product/search&search=eve3-70)
 
 
 3. Select your touch screen
