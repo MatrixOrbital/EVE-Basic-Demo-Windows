@@ -53,6 +53,8 @@ Select and download the .exe generated for your specific EVE2 or EVE3 variant to
 * **TPC** - Capacitive touch panel. Uses FT813/BT815 Graphics controller
 
 **RUN THE EXE**
+Please note, if you do not have the USB2SPI module and an EVE2/3 display attached, nothing will happen.
+![alt text](https://raw.githubusercontent.com/MatrixOrbital/Basic-EVE-Demo/master/Screens/Basic-EVE-Demo-5.jpg)
 
 If you have a touch screen, TPR or TPC, you will need to calibrate the touch screen by pressing the dots. After the calibration is complete, you will see Matrix Orbital with a blue circle. If you press the circle it will enlarge.
 
