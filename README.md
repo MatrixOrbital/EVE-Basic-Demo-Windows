@@ -1,12 +1,18 @@
-# BASIC EVE2 AND EVE3 TEST DEMO SOFTWARE
+# BASIC EVE2, EVE3 AND EVE4 TEST DEMO SOFTWARE
 
-A quick and easy sanity check to ensure that your Matrix Orbital EVE2 or EVE3 SPI TFT Display and touch hardware works properly.
+A quick and easy sanity check to ensure that your Matrix Orbital EVE2, EVE3 or EVE4 SPI TFT Display and touch hardware works properly.
 
 ------------------------------------------------------------------
 
 **Hardware Requirements:**
 
 ![alt text](https://www.matrixorbital.com/image/cache/catalog/products/EVE/EVE3-43G-300x300.jpg)
+
+**EVE4 SPI TFT** - Uses BT817/BT818 Graphics controller
+
+https://www.matrixorbital.com/ftdi-eve/eve-bt817-bt818
+
+**OR**
 
 **EVE3 SPI TFT** - Uses BT815/BT816 Graphics controller
 
@@ -29,10 +35,10 @@ https://www.matrixorbital.com/ftdi-eve/EVE2-USB2SPI-KIT-A
 
 **SOFTWARE**
 
-Select and download the .exe generated for your specific EVE2 or EVE3 variant to test both the TFT and touch functionality of your display. Windows only.
+Select and download the .exe generated for your specific EVE2, EVE3 or EVE4 variant to test both the TFT and touch functionality of your display. Windows only.
 
 
-1. Select [**EVE2**](https://www.matrixorbital.com/ftdi-eve/eve-ft812) or [**EVE3**](https://www.matrixorbital.com/ftdi-eve/eve-bt815-bt816)
+1. Select [**EVE2**](https://www.matrixorbital.com/ftdi-eve/eve-ft812) or [**EVE3**](https://www.matrixorbital.com/ftdi-eve/eve-bt815-bt816) or [**EVE4**](https://www.matrixorbital.com/ftdi-eve/eve-bt817-bt818)
 
 2. Select your display size:
 
@@ -54,7 +60,7 @@ Select and download the .exe generated for your specific EVE2 or EVE3 variant to
 
 **RUN THE EXE**
 
-Please note, if you do not have the USB2SPI module and an EVE2/3 display attached, nothing will happen.
+Please note, if you do not have the USB2SPI module and an EVE2/3/4 display attached, nothing will happen.
 ![alt text](https://raw.githubusercontent.com/MatrixOrbital/Basic-EVE-Demo/master/Screens/Basic-EVE-Demo-5.png)
 
 If you have a touch screen, TPR or TPC, you will need to calibrate the touch screen by pressing the dots. After the calibration is complete, you will see Matrix Orbital with a blue circle. If you press the circle it will enlarge.
