@@ -1,4 +1,4 @@
-# BASIC EVE2, EVE3 AND EVE4 TEST DEMO SOFTWARE
+# Windows EVE2, EVE3 AND EVE4 TEST DEMO SOFTWARE
 
 A quick and easy sanity check to ensure that your Matrix Orbital EVE2, EVE3 or EVE4 SPI TFT Display and touch hardware works properly.
 
