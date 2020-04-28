@@ -2,6 +2,8 @@
 
 A quick and easy sanity check to ensure that your Matrix Orbital EVE2, EVE3 or EVE4 SPI TFT Display and touch hardware works properly.
 
+Windows Support Tool
+
 ------------------------------------------------------------------
 
 **Hardware Requirements:**
