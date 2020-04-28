@@ -37,7 +37,7 @@ https://www.matrixorbital.com/ftdi-eve/EVE2-USB2SPI-KIT-A
 
 **SOFTWARE**
 
-Select and download the .exe generated for your specific EVE2, EVE3 or EVE4 variant to test both the TFT and touch functionality of your display. Windows only.
+Select and download the .exe generated for your specific EVE2, EVE3 or EVE4  (for EVE4 use EVE3 EXE files) variant to test both the TFT and touch functionality of your display. Windows only.
 
 
 1. Select [**EVE2**](https://www.matrixorbital.com/ftdi-eve/eve-ft812) or [**EVE3**](https://www.matrixorbital.com/ftdi-eve/eve-bt815-bt816) or [**EVE4**](https://www.matrixorbital.com/ftdi-eve/eve-bt817-bt818)
