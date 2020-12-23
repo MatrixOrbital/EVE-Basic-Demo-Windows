@@ -3,7 +3,8 @@
 #include <stdint.h>
 #include <stdlib.h>
 #include <stdio.h>
-#include<string.h>
+#include <string.h>
+#include <stdbool.h>
 // =====================================================================================
 // Required Functions - Hardware driver or otherwise environment specific. Abstracted  |
 // and found in ArduinoAL.h or whatever the abstraction layer is called in your world. |
@@ -81,7 +82,7 @@ extern "C" {
 #define CMD_MEMSET           0xFFFFFF1B
 #define CMD_MEMWRITE         0xFFFFFF1A
 #define CMD_MEMZERO          0xFFFFFF1C
-#define CMD_NUMBER           0xFFFFFF38
+#define CMD_NUMBER           0xFFFFFF2E
 #define CMD_PLAYVIDEO        0xFFFFFF3A
 #define CMD_PROGRESS         0xFFFFFF0F
 #define CMD_REGREAD          0xFFFFFF19
@@ -105,7 +106,7 @@ extern "C" {
 #define CMD_TRANSLATE        0xFFFFFF27
 #define CMD_VIDEOFRAME       0xFFFFFF41
 #define CMD_VIDEOSTART       0xFFFFFF40
-
+#define CMD_ROMFONT          0xFFFFFF3F
 // BT81X COMMANDS 
 #define CMD_FLASHERASE       0xFFFFFF44
 #define CMD_FLASHWRITE       0xFFFFFF45
@@ -119,6 +120,12 @@ extern "C" {
 #define CMD_FLASHSPIRX       0xFFFFFF4D
 #define CMD_FLASHSOURCE      0xFFFFFF4E
 #define CMD_CLEARCACHE       0xFFFFFF4F
+#define CMD_ANIMDRAW         4294967126UL
+#define CMD_ANIMFRAME        4294967130UL
+#define CMD_ANIMSTART        4294967123UL
+#define CMD_ANIMSTOP         4294967124UL
+#define CMD_ANIMXY           4294967125UL 
+
 #define CMD_FLASHAPPENDF     0xFFFFFF59
 #define CMD_VIDEOSTARTF      0xFFFFFF5F
 
@@ -144,6 +151,10 @@ extern "C" {
 #define OPT_RIGHTX           2048UL
 #define OPT_SIGNED           256UL
 #define OPT_SOUND            32UL
+
+#define ANIM_HOLD            2UL
+#define ANIM_LOOP            1UL
+#define ANIM_ONCE            0UL
 
 // Definitions for FT8xx co processor command buffer
 #define FT_DL_SIZE           (8*1024)  // 8KB Display List buffer size
@@ -265,6 +276,7 @@ extern "C" {
 #define REG_TRACKER_4             0x7010
 #define REG_MEDIAFIFO_READ        0x7014
 #define REG_MEDIAFIFO_WRITE       0x7018
+#define REG_PLAY_CONTROL          0x714E
 
 // Flash related registers
 #define REG_FLASH_STATUS          0x5F0
@@ -361,6 +373,7 @@ extern "C" {
 #define BITMAP_SIZE(filter,wrapx,wrapy,width,height) ((8UL<<24)|(((filter)&1UL)<<20)|(((wrapx)&1UL)<<19)|(((wrapy)&1UL)<<18)|(((width)&511UL)<<9)|(((height)&511UL)<<0)) // BITMAP_SIZE - FT-PG Section 4.09
 #define TAG(s) ((3UL<<24)|(((s)&255UL)<<0))                                                                                                                              // TAG - FT-PG Section 4.43
 #define POINT_SIZE(sighs) ((13UL<<24)|(((sighs)&8191UL)<<0))                                                                                                             // POINT_SIZE - FT-PG Section 4.36
+#define LINE_WIDTH(width) ((14UL<<24)|(((width)&8191UL)<<0))                                                                                                             // POINT_SIZE - FT-PG Section 4.36
 #define BEGIN(PrimitiveTypeRef) ((31UL<<24)|(((PrimitiveTypeRef)&15UL)<<0))                                                                                              // BEGIN - FT-PG Section 4.05
 #define END() ((33UL<<24))                                                                                                                                               // END - FT-PG Section 4.30
 #define DISPLAY() ((0UL<<24))                                                                                                                                            // DISPLAY - FT-PG Section 4.29
@@ -372,7 +385,7 @@ extern "C" {
 extern uint16_t FifoWriteLocation;
 
 // Function Prototypes
-void FT81x_Init(void);
+void FT81x_Init(int display, int board, int touch);
 void Eve_Reset(void);
 void Cap_Touch_Upload(void);
 
@@ -411,6 +424,12 @@ void Cmd_Scale(uint32_t sx, uint32_t sy);
 void Cmd_Calibrate(uint32_t result);
 void Cmd_Flash_Fast(void);
 
+void Cmd_AnimStart(int32_t ch, uint32_t aoptr, uint32_t loop);
+void Cmd_AnimStop(int32_t ch);
+void Cmd_AnimXY(int32_t ch, int16_t x, int16_t y);
+void Cmd_AnimDraw(int32_t ch);
+void Cmd_AnimDrawFrame(int16_t x, int16_t y, uint32_t aoptr, uint32_t frame);
+
 void Calibrate_Manual(uint16_t Width, uint16_t Height, uint16_t V_Offset, uint16_t H_Offset);
 
 uint16_t CoProFIFO_FreeSpace(void);
@@ -420,6 +439,17 @@ void StartCoProTransfer(uint32_t address, uint8_t reading);
 void CoProWrCmdBuf(const uint8_t *buffer, uint32_t count);
 uint32_t WriteBlockRAM(uint32_t Add, const uint8_t *buff, uint32_t count);
 int32_t CalcCoef(int32_t Q, int32_t K);
+uint32_t Display_Width();
+uint32_t Display_Height();
+uint8_t Display_Touch();
+uint32_t Display_HOffset();
+uint32_t Display_VOffset();
+
+/* Flash commands */
+bool FlashAttach(void);
+bool FlashDetach(void);
+bool FlashFast(void);
+bool FlashErase(void);
 
 #ifdef __cplusplus
 }
