@@ -79,3 +79,11 @@ variant by opening the MatrixEve2Conf.h file, and modifying the listed definitio
 
 Support Forums: http://www.lcdforums.com/forums/viewforum.php?f=45
 
+
+**LIBRARY**
+- This code makes use of the Matrix Orbital EVE Library found here: 
+
+  https://github.com/MatrixOrbital/EVE2-Library
+
+  - While a copy of the library files (Eve2_81x.c and Eve2_81x.h) is included here, it will not be updated. For the most up to date files please use the files from the link above.
+
