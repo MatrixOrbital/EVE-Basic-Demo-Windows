@@ -60,8 +60,8 @@ Select and download the .exe generated for your specific EVE2, EVE3 or EVE4  (fo
 3. Select your touch screen
 
 * **TPN** - No touch panel
-* **TPR** - Resistive touch panel. Uses FT812/BT816 Graphics controller
-* **TPC** - Capacitive touch panel. Uses FT813/BT815 Graphics controller
+* **TPR** - Resistive touch panel. Uses FT812/BT816/BT818 Graphics controller
+* **TPC** - Capacitive touch panel. Uses FT813/BT815/BT817 Graphics controller
 
 **RUN THE EXE**
 
