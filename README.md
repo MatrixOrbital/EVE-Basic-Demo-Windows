@@ -48,10 +48,13 @@ Select and download the .exe generated for your specific EVE2, EVE3 or EVE4  (fo
 * [**35** - 3.5" 320 x 240 TFT](https://www.matrixorbital.com/index.php?route=product/search&search=eve3-35)
 * [**38** - 3.8" 480 x 116 TFT](https://www.matrixorbital.com/index.php?route=product/search&search=eve2-38)
 * [**39** - 3.9" 480 x 128 TFT](https://www.matrixorbital.com/index.php?route=product/search&search=eve3x-39)
+* [**43** - 4.0" 720 x 720 TFT](https://www.matrixorbital.com/index.php?route=product/search&search=eve4x-40)
 * [**43** - 4.3" 480 x 272 TFT](https://www.matrixorbital.com/index.php?route=product/search&search=eve3-43)
 * [**50** - 5.0" 800 x 480 TFT](https://www.matrixorbital.com/index.php?route=product/search&search=eve3-50)
 * [**52** - 5.2" 800 x 128 TFT](https://www.matrixorbital.com/index.php?route=product/search&search=eve3-52)
 * [**70** - 7.0" 800 x 480 TFT](https://www.matrixorbital.com/index.php?route=product/search&search=eve3-70)
+* [**70** - 7.0" 1024 x 600 TFT](https://www.matrixorbital.com/index.php?route=product/search&search=eve4x-70)
+* [**101** - 10.1" 1280 x 800 TFT](https://www.matrixorbital.com/index.php?route=product/search&search=eve4x-101)
 
 
 3. Select your touch screen
