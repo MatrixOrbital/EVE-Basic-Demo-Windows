@@ -366,6 +366,7 @@ extern "C" {
 #define COLOR_RGB(red,green,blue)       ((4UL<<24)|(((red)&255UL)<<16)|(((green)&255UL)<<8)|(((blue)&255UL)<<0))                                                               // COLOR_RGB - FT-PG Section 4.28
 #define VERTEX2II(x,y,handle,cell) ((2UL<<30)|(((x)&511UL)<<21)|(((y)&511UL)<<12)|(((handle)&31UL)<<7)|(((cell)&127UL)<<0))                                              // VERTEX2II - FT-PG Section 4.48
 #define VERTEX2F(x,y) ((1UL<<30)|(((x)&32767UL)<<15)|(((y)&32767UL)<<0))                                                                                                 // VERTEX2F - FT-PG Section 4.47
+#define VERTEXFORMAT(frac) ((39UL<<24)|(frac))                                                                                                                           // VERTEXFORMAT - FT-PG Section 4.51
 #define CELL(cell) ((6UL<<24)|(((cell)&127UL)<<0))                                                                                                                       // CELL - FT-PG Section 4.20
 #define BITMAP_HANDLE(handle) ((5UL<<24) | (((handle) & 31UL) << 0))                                                                                                     // BITMAP_HANDLE - FT-PG Section 4.06
 #define BITMAP_SOURCE(addr) ((1UL<<24)|(((addr)&1048575UL)<<0))                                                                                                          // BITMAP_SOURCE - FT-PG Section 4.11
@@ -385,7 +386,7 @@ extern "C" {
 extern uint16_t FifoWriteLocation;
 
 // Function Prototypes
-void FT81x_Init(int display, int board, int touch);
+void FT81x_Init(void);
 void Eve_Reset(void);
 void Cap_Touch_Upload(void);
 
