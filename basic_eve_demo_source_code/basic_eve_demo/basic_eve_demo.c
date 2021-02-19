@@ -16,13 +16,14 @@
 void MakeScreen_MatrixOrbital(uint8_t DotSize)
 {
 	Send_CMD(CMD_DLSTART);                   //Start a new display list
+	Send_CMD(VERTEXFORMAT(0));               //setup VERTEX2F to take pixel coordinates
 	Send_CMD(CLEAR_COLOR_RGB(0, 0, 0));      //Determine the clear screen color
 	Send_CMD(CLEAR(1, 1, 1));	             //Clear the screen and the curren display list
 	Send_CMD(COLOR_RGB(26, 26, 192));        // change colour to blue
 	Send_CMD(POINT_SIZE(DotSize * 16));      // set point size to DotSize pixels. Points = (pixels x 16)
 	Send_CMD(BEGIN(POINTS));                 // start drawing point
 	Send_CMD(TAG(1));                        // Tag the blue dot with a touch ID
-	Send_CMD(VERTEX2II(DWIDTH / 2, DHEIGHT / 2, 0, 0));     // place blue point
+	Send_CMD(VERTEX2F(DWIDTH / 2, DHEIGHT / 2));     // place blue point
 	Send_CMD(END());                         // end drawing point
 	Send_CMD(COLOR_RGB(255, 255, 255));      //Change color to white for text
 	Cmd_Text(DWIDTH / 2, DHEIGHT / 2, 30, OPT_CENTER, " MATRIX         ORBITAL"); //Write text in the center of the screen
@@ -59,7 +60,7 @@ int main()
 
 										   //If you are using a touch screen, make sure to define what 
 										   //variant you are using in the MatrixEveConf.h file
-#if defined (TOUCH_RESISTIVE) || defined (TOUCH_CAPACITIVE)
+#ifdef TOUCH_RESISTIVE
 	Calibrate();
 #endif
 
