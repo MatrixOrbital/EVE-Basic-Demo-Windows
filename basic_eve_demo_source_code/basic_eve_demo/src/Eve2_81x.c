@@ -153,7 +153,7 @@ void Cap_Touch_Upload(void)
 {
 #include "touch_cap_811.h"	
 	//---Goodix911 Configuration from AN336
-	//Load the TOUCH_DATA_U8 or TOUCH_DATA_U32 array from file ‚Äútouch_cap_811.h‚Äù via the FT81x command buffer RAM_CMD
+	//Load the TOUCH_DATA_U8 or TOUCH_DATA_U32 array from file ìtouch_cap_811.hî via the FT81x command buffer RAM_CMD
 	uint8_t CTOUCH_CONFIG_DATA_G911[] = { TOUCH_DATA_U8 };
 	CoProWrCmdBuf(CTOUCH_CONFIG_DATA_G911, TOUCH_DATA_LEN);
 	//Execute the commands till completion
@@ -661,6 +661,44 @@ void Calibrate_Manual(uint16_t Width, uint16_t Height, uint16_t V_Offset, uint16
     count++;
   }while(count < 6);
 }
+// ***************************************************************************************************************
+// *** Animation functions ***************************************************************************************
+// ***************************************************************************************************************
+
+void Cmd_AnimStart(int32_t ch, uint32_t aoptr, uint32_t loop)
+{
+	Send_CMD(CMD_ANIMSTART);
+	Send_CMD(ch);
+	Send_CMD(aoptr);
+	Send_CMD(loop);
+}
+
+void Cmd_AnimStop(int32_t ch)
+{
+	Send_CMD(CMD_ANIMSTOP);
+	Send_CMD(ch);
+}
+
+void Cmd_AnimXY(int32_t ch, int16_t x, int16_t y)
+{
+	Send_CMD(CMD_ANIMXY);
+	Send_CMD(ch);
+	Send_CMD(((uint32_t)y << 16) | x);
+}
+
+void Cmd_AnimDraw(int32_t ch)
+{
+	Send_CMD(CMD_ANIMDRAW);
+	Send_CMD(ch);
+}
+
+void Cmd_AnimDrawFrame(int16_t x, int16_t y, uint32_t aoptr, uint32_t frame)
+{
+	Send_CMD(CMD_ANIMFRAME);
+	Send_CMD(((uint32_t)y << 16) | x);
+	Send_CMD(aoptr);
+	Send_CMD(frame);
+}
 
 // ***************************************************************************************************************
 // *** Utility and helper functions ******************************************************************************
@@ -791,7 +829,7 @@ void CoProWrCmdBuf(const uint8_t *buff, uint32_t count)
 // Return the last written address + 1 (The next available RAM address)
 uint32_t WriteBlockRAM(uint32_t Add, const uint8_t *buff, uint32_t count)
 {
-  uint8_t index;
+  uint32_t index;
   uint32_t WriteAddress = Add;  // I want to return the value instead of modifying the variable in place
   
   for (index = 0; index < count; index++)
@@ -830,3 +868,54 @@ int32_t CalcCoef(int32_t Q, int32_t K)
       
   return (returnValue);
 }
+
+bool FlashAttach(void)
+{
+	Send_CMD(CMD_FLASHATTACH);
+	UpdateFIFO();                                                       // Trigger the CoProcessor to start processing commands out of the FIFO
+	Wait4CoProFIFOEmpty();                                              // wait here until the coprocessor has read and executed every pending command.
+
+	uint8_t FlashStatus = rd8(REG_FLASH_STATUS + RAM_REG);
+	if (FlashStatus != FLASH_STATUS_BASIC)
+	{
+		return false;
+	}
+	return true;
+}
+
+bool FlashDetach(void)
+{
+	Send_CMD(CMD_FLASHDETACH);
+	UpdateFIFO();                                                       // Trigger the CoProcessor to start processing commands out of the FIFO
+	Wait4CoProFIFOEmpty();                                              // wait here until the coprocessor has read and executed every pending command.
+
+	uint8_t FlashStatus = rd8(REG_FLASH_STATUS + RAM_REG);
+	if (FlashStatus != FLASH_STATUS_DETACHED)
+	{
+		return false;
+	}
+	return true;
+}
+
+bool FlashFast(void)
+{
+	Cmd_Flash_Fast();
+	UpdateFIFO();                                                       // Trigger the CoProcessor to start processing commands out of the FIFO
+	Wait4CoProFIFOEmpty();                                              // wait here until the coprocessor has read and executed every pending command.
+
+	uint8_t FlashStatus = rd8(REG_FLASH_STATUS + RAM_REG);
+	if (FlashStatus != FLASH_STATUS_FULL)
+	{
+		return false;
+	}
+	return true;
+}
+
+bool FlashErase(void)
+{
+	Send_CMD(CMD_FLASHERASE);
+	UpdateFIFO();                                                       // Trigger the CoProcessor to start processing commands out of the FIFO
+	Wait4CoProFIFOEmpty();                                              // wait here until the coprocessor has read and executed every pending command.
+	return true;
+}
+
