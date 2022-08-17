@@ -1,6 +1,6 @@
 # Windows EVE2, EVE3 AND EVE4 TEST DEMO SOFTWARE
 
-A quick and easy sanity check to ensure that your Matrix Orbital EVE2, EVE3 or EVE4 SPI TFT Display and touch hardware works properly.
+A quick and easy sanity check to ensure that your Matrix Orbital EVE2, EVE3 or EVE4 SPI TFT Display and touch hardware works properly. This software supports the EVE3x and EVE4x modules as well.
 
 Windows Support Tool
 
@@ -10,13 +10,13 @@ Windows Support Tool
 
 ![alt text](https://www.matrixorbital.com/image/cache/catalog/products/EVE/EVE3-43G-300x300.jpg)
 
-**EVE4 SPI TFT** - Uses BT817/BT818 Graphics controller
+**EVE4x SPI TFT** - Uses BT817/BT818 Graphics controller
 
 https://www.matrixorbital.com/ftdi-eve/eve-bt817-bt818
 
 **OR**
 
-**EVE3 SPI TFT** - Uses BT815/BT816 Graphics controller
+**EVE3 & EVE3x SPI TFT** - Uses BT815/BT816 Graphics controller
 
 https://www.matrixorbital.com/ftdi-eve/eve-bt815-bt816
 
