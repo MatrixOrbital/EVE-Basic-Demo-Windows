@@ -1,3 +1,7 @@
+**DEPRICATED** please use this new version
+https://github.com/MatrixOrbital/EVE-Basic-Demo-Windows-Linux
+
+
 # Windows EVE2, EVE3 AND EVE4 TEST DEMO SOFTWARE
 
 A quick and easy sanity check to ensure that your Matrix Orbital EVE2, EVE3 or EVE4 SPI TFT Display and touch hardware works properly. This software supports the EVE3x and EVE4x modules as well.
